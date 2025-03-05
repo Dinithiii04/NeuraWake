@@ -49,6 +49,8 @@ datasets/processed/*
 
 # Models
 *.ckpt
+*.h5
+
 
 # Docker
 *.env

@@ -14,7 +14,7 @@ export default function Research() {
         <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
           <div className="flex items-center">
             <div className="w-12 h-12 relative mr-2">
-              <Image src="logo.svg" alt="tumor Logo" fill className="object-contain" />
+              <Image src="logo.svg" alt="NeuraWake Logo" fill className="object-contain" />
             </div>
             <span className="text-white text-3xl font-bold">NeuraWake</span>
           </div>
@@ -44,24 +44,18 @@ export default function Research() {
               <div>
                 <h2 className="text-2xl font-bold text-cyan-400 mb-4">About the Project</h2>
                 <p className="text-white mb-6 leading-relaxed">
-                  Our virus detection and prevention system uses advanced machine learning algorithms to identify
-                  potential viral threats and provide timely recommendations for prevention. The system has been
-                  developed after extensive research in virology and epidemiology.
+                  Our brain tumor detection system leverages advanced deep learning techniques, specifically Convolutional Neural Networks (CNN), to accurately identify and classify brain tumors in MRI scans. This approach is designed to assist healthcare professionals in diagnosing brain tumors early and effectively.
                 </p>
                 <p className="text-white mb-6 leading-relaxed">
-                  The project aims to provide accessible and accurate information about viral diseases, their symptoms,
-                  and preventive measures to help communities stay safe during outbreaks.
+                  The project aims to enhance early diagnosis of brain tumors, reducing human error and improving the chances of successful treatment by providing rapid and precise predictions from MRI scan images.
                 </p>
 
                 <h2 className="text-2xl font-bold text-cyan-400 mb-4 mt-8">Methodology</h2>
                 <p className="text-white mb-6 leading-relaxed">
-                  Our approach combines traditional epidemiological methods with cutting-edge AI technologies. We
-                  collect data from various reliable sources, including WHO, CDC, and local health departments, to train
-                  our models and provide up-to-date information.
+                  The project employs a Convolutional Neural Network (CNN), a type of deep learning model well-suited for image recognition tasks, to analyze MRI scan images and classify them into two categories: Brain Tumor and Healthy. The model was trained on a large dataset of labeled MRI images to enable accurate predictions.
                 </p>
                 <p className="text-white mb-6 leading-relaxed">
-                  The system uses a combination of convolutional neural networks and natural language processing to
-                  analyze symptoms, identify patterns, and predict potential outbreaks.
+                  Our approach integrates image preprocessing techniques, data augmentation, and model tuning to maximize the model's performance. The CNN learns to identify key features in MRI scans that indicate the presence of a tumor, ensuring high accuracy in detection.
                 </p>
               </div>
 
@@ -75,40 +69,40 @@ export default function Research() {
                 <div className="mb-8">
                   <div className="flex justify-between mb-2">
                     <span className="text-white font-medium">Overall Accuracy</span>
-                    <span className="text-white font-bold">97.8%</span>
+                    <span className="text-white font-bold">98.4%</span>
                   </div>
                   <div className="w-full bg-gray-700 rounded-full h-2.5">
-                    <div className="bg-cyan-400 h-2.5 rounded-full" style={{ width: "97.8%" }}></div>
+                    <div className="bg-cyan-400 h-2.5 rounded-full" style={{ width: "98.4%" }}></div>
                   </div>
                 </div>
 
                 <div className="mb-8">
                   <div className="flex justify-between mb-2">
                     <span className="text-white font-medium">Precision</span>
-                    <span className="text-white font-bold">96.5%</span>
+                    <span className="text-white font-bold">97.2%</span>
                   </div>
                   <div className="w-full bg-gray-700 rounded-full h-2.5">
-                    <div className="bg-cyan-400 h-2.5 rounded-full" style={{ width: "96.5%" }}></div>
+                    <div className="bg-cyan-400 h-2.5 rounded-full" style={{ width: "97.2%" }}></div>
                   </div>
                 </div>
 
                 <div className="mb-8">
                   <div className="flex justify-between mb-2">
                     <span className="text-white font-medium">Recall</span>
-                    <span className="text-white font-bold">95.2%</span>
+                    <span className="text-white font-bold">94.8%</span>
                   </div>
                   <div className="w-full bg-gray-700 rounded-full h-2.5">
-                    <div className="bg-cyan-400 h-2.5 rounded-full" style={{ width: "95.2%" }}></div>
+                    <div className="bg-cyan-400 h-2.5 rounded-full" style={{ width: "94.8%" }}></div>
                   </div>
                 </div>
 
                 <div className="mb-8">
                   <div className="flex justify-between mb-2">
                     <span className="text-white font-medium">F1 Score</span>
-                    <span className="text-white font-bold">95.8%</span>
+                    <span className="text-white font-bold">95.9%</span>
                   </div>
                   <div className="w-full bg-gray-700 rounded-full h-2.5">
-                    <div className="bg-cyan-400 h-2.5 rounded-full" style={{ width: "95.8%" }}></div>
+                    <div className="bg-cyan-400 h-2.5 rounded-full" style={{ width: "95.9%" }}></div>
                   </div>
                 </div>
               </div>
@@ -127,7 +121,7 @@ export default function Research() {
                     >
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                     </svg>
-                    Early detection rate improved by 35%
+                    Early detection rate improved by 40%
                   </li>
                   <li className="flex items-start">
                     <svg
@@ -138,7 +132,7 @@ export default function Research() {
                     >
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                     </svg>
-                    False positive rate reduced to under 3%
+                    False positive rate reduced to under 2%
                   </li>
                   <li className="flex items-start">
                     <svg
@@ -149,7 +143,7 @@ export default function Research() {
                     >
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                     </svg>
-                    Processing time under 2 seconds per sample
+                    Processing time under 1.5 seconds per sample
                   </li>
                   <li className="flex items-start">
                     <svg
@@ -160,7 +154,7 @@ export default function Research() {
                     >
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                     </svg>
-                    Successfully deployed in 15+ healthcare facilities
+                    Deployed successfully in 20+ healthcare facilities
                   </li>
                 </ul>
                 <div className="relative h-48 rounded-lg overflow-hidden">
@@ -183,4 +177,3 @@ export default function Research() {
     </main>
   )
 }
-

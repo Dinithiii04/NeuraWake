@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --primary: 201 100% 36%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 186 100% 50%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --accent: 44 100% 60%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.font-display {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { useState, useRef } from "react";
 import Link from "next/link";
@@ -12,11 +12,17 @@ export default function Prediction() {
   const [prediction, setPrediction] = useState<string | null>(null);
   const [confidence, setConfidence] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [preview, setPreview] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files.length > 0) {
-      setSelectedFile(e.target.files[0]);
+      const file = e.target.files[0];
+      setSelectedFile(file);
+      setPreview(URL.createObjectURL(file));
+      setPrediction(null);
+      setConfidence(null);
+      setError(null);
     }
   };
 
@@ -36,8 +42,6 @@ export default function Prediction() {
       const response = await axios.post("http://127.0.0.1:5000/tumor/predict", formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
-      
-      
 
       setPrediction(response.data.prediction);
       setConfidence(response.data.confidence);
@@ -55,13 +59,16 @@ export default function Prediction() {
   };
 
   return (
-    <main className="min-h-screen flex flex-col relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-900 to-blue-800 z-0"></div>
-      <div className="relative z-20 w-full">
+    <main className="min-h-screen flex flex-col relative bg-gray-900 text-white">
+      {/* Background Gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-900 to-cyan-900 opacity-70"></div>
+
+      {/* Header */}
+      <div className="relative z-10 w-full">
         <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
           <div className="flex items-center">
             <div className="w-12 h-12 relative mr-2">
-              <Image src="logo.svg" alt="tumor Logo" fill className="object-contain" />
+              <Image src="logo.svg" alt="NeuraWake Logo" fill className="object-contain" />
             </div>
             <span className="text-white text-3xl font-bold">NeuraWake</span>
           </div>
@@ -74,38 +81,53 @@ export default function Prediction() {
           </Link>
         </div>
 
+        {/* Prediction Section */}
         <div className="container mx-auto px-6 py-12 flex flex-col items-center">
-          <div className="w-full max-w-md bg-white/10 backdrop-blur-sm rounded-xl p-8 shadow-xl">
-            <h1 className="text-3xl font-bold text-white text-center mb-2">Brain Tumor Detection</h1>
-            <p className="text-cyan-400 text-center mb-8">
-              Upload an MRI scan to detect brain tumors.
-            </p>
+          <div className="w-full max-w-2xl bg-white/10 backdrop-blur-lg rounded-2xl p-10 shadow-2xl flex flex-col md:flex-row items-center">
+            {/* Left Side: Upload Box */}
+            <div className="flex flex-col items-center w-full md:w-1/2">
+              <h2 className="text-2xl font-semibold text-white mb-4">Upload MRI Image.</h2>
 
-            <div className="bg-blue-900/50 rounded-lg p-6 mb-6">
-              <h2 className="text-xl font-semibold text-white mb-4">Upload Image</h2>
-              <div className="mb-4">
-                <label className="block text-sm font-medium text-cyan-400 mb-2">MRI Image</label>
-                <input type="file" ref={fileInputRef} onChange={handleFileChange} accept="image/*" className="hidden" />
-                <div className="flex items-center">
-                  <button type="button" onClick={triggerFileInput} className="bg-blue-800 hover:bg-blue-700 text-white py-2 px-4 rounded-md transition">
-                    Choose File
-                  </button>
-                  <span className="ml-3 text-white">{selectedFile ? selectedFile.name : "No file chosen"}</span>
-                </div>
+              <input type="file" ref={fileInputRef} onChange={handleFileChange} accept="image/*" className="hidden" />
+              
+              <div
+                className="border border-cyan-500 bg-gray-800 p-3 rounded-lg w-60 h-60 flex items-center justify-center cursor-pointer hover:bg-gray-700 transition"
+                onClick={triggerFileInput}
+              >
+                {preview ? (
+                  <img src={preview} alt="Uploaded preview" className="rounded-lg w-full h-full object-cover" />
+                ) : (
+                  <span className="text-cyan-400">Click to Choose</span>
+                )}
               </div>
+              <span className="text-white text-sm mt-3">{selectedFile ? selectedFile.name : "No file chosen"}</span>
             </div>
 
-            <button onClick={handleSubmit} disabled={!selectedFile || isLoading} className={`w-full py-3 rounded-md font-medium transition-colors ${!selectedFile || isLoading ? "bg-cyan-700 cursor-not-allowed" : "bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600"}`}>
-              {isLoading ? "Processing..." : "Get Prediction"}
-            </button>
+            {/* Right Side: Predictions & Button */}
+            <div className="flex flex-col justify-center items-center w-full md:w-1/2 mt-6 md:mt-0">
+              <button
+                onClick={handleSubmit}
+                disabled={!selectedFile || isLoading}
+                className={`w-full px-6 py-3 rounded-lg font-medium transition-all ${
+                  !selectedFile || isLoading
+                    ? "bg-cyan-700 cursor-not-allowed"
+                    : "bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 shadow-lg"
+                }`}
+              >
+                {isLoading ? "Processing..." : "Get Prediction"}
+              </button>
 
-            {error && <p className="text-red-500 text-center mt-4">{error}</p>}
-            {prediction && (
-              <div className="mt-6 text-center bg-white/10 p-4 rounded-lg">
-                <h3 className="text-xl font-semibold text-white">Prediction: {prediction}</h3>
-                <p className="text-cyan-400">Confidence: {confidence}</p>
-              </div>
-            )}
+              {error && <p className="text-red-500 text-center mt-4">{error}</p>}
+
+              {prediction && (
+                <div className="mt-6 bg-white/10 p-4 rounded-lg shadow-md w-full text-center border border-cyan-500">
+                  <h3 className="text-xl font-semibold text-white">
+                    Prediction: <span className="text-cyan-300">{prediction}</span>
+                  </h3>
+                  <p className="text-cyan-400">Confidence: {confidence}</p>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </div>

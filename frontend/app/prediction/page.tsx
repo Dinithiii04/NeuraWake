@@ -124,7 +124,6 @@ export default function Prediction() {
                   <h3 className="text-xl font-semibold text-white">
                     Prediction: <span className="text-cyan-300">{prediction}</span>
                   </h3>
-                  <p className="text-cyan-400">Confidence: {confidence}</p>
                 </div>
               )}
             </div>

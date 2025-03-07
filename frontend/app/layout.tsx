@@ -6,9 +6,8 @@ import "./globals.css"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "VIMNS - Virus Information Management System",
-  description: "Learn how to protect yourself from viruses and diseases",
-    generator: 'v0.dev'
+  title: "NeuraWake",
+  description: "protect yourself from brain tumor",
 }
 
 export default function RootLayout({

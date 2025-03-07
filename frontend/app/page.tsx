@@ -9,7 +9,7 @@ export default function Home() {  const [isLoading, setIsLoading] = useState(tru
     // Simulate loading time
     const timer = setTimeout(() => {
       setIsLoading(false)
-    }, 5000)
+    }, 2000)
 
     return () => clearTimeout(timer)
   }, [])

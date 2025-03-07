@@ -68,12 +68,6 @@ The **Brain Tumor Classification Web Application** is an AI-powered system that 
 ## 🛠 Tech Stack Used
 ![image_alt](https://github.com/Dinithiii04/NeuraWake/blob/5eb6a5b8c34c5178b9697852dbd180c9f46f0c79/techStack.png)
 
-
----
-
-## 📸 Demo of Web Application
-![App Screenshot]([https://yourimageurl.com/screenshot.png](https://github.com/Dinithiii04/NeuraWake/blob/5c01ff0b22633e1088215c1e52be94c4bc53010c/webapp.mp4))
-
 ---
 
 ### 👨‍💻 Contributing

@@ -1,4 +1,5 @@
-# NeuraWake# 🧠 Brain Tumor Classification Web Application
+# NeuraWake
+#🧠 Brain Tumor Classification Web Application
 
 ## 📌 About
 The **Brain Tumor Classification Web Application** is an AI-powered system that classifies brain MRI scans into two categories: **Brain Tumor** and **Healthy**. The application utilizes **Convolutional Neural Networks (CNNs)** for accurate classification and provides a seamless interface for users to upload MRI images and receive instant predictions.
@@ -66,7 +67,7 @@ The **Brain Tumor Classification Web Application** is an AI-powered system that 
 ---
 
 ## 🛠 Tech Stack Used
-![alt text]([["/NeuraWake/frontend/public/collab.png"](https://github.com/Dinithiii04/NeuraWake/blob/dcc332d4e3fcb1edabe37f4869224d96e0074e97/techStack.png)](https://github.com/Dinithiii04/NeuraWake/blob/main/techStack.png?raw=true))
+![image_alt](https://github.com/Dinithiii04/NeuraWake/blob/5eb6a5b8c34c5178b9697852dbd180c9f46f0c79/techStack.png)
 
 
 ---

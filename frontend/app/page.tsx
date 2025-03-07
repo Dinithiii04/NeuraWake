@@ -1,7 +1,23 @@
+'use client';
 import Image from "next/image";
 import Link from "next/link";
+import GifLoader from "../components/ui/loader";
+import { useEffect, useState } from "react";
+export default function Home() {  const [isLoading, setIsLoading] = useState(true)
 
-export default function Home() {
+  useEffect(() => {
+    // Simulate loading time
+    const timer = setTimeout(() => {
+      setIsLoading(false)
+    }, 5000)
+
+    return () => clearTimeout(timer)
+  }, [])
+
+  if (isLoading) {
+    return <GifLoader />
+  }
+
   return (
     <main className="min-h-screen flex flex-col relative overflow-hidden">
       {/* Background gradient */}

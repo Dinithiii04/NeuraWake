@@ -68,97 +68,32 @@ export default function Research() {
 
                 <div className="mb-8">
                   <div className="flex justify-between mb-2">
-                    <span className="text-white font-medium">Overall Accuracy</span>
-                    <span className="text-white font-bold">98.4%</span>
+                    <span className="text-white font-medium">Train Accuracy</span>
+                    <span className="text-white font-bold">79.14%</span>
                   </div>
                   <div className="w-full bg-gray-700 rounded-full h-2.5">
-                    <div className="bg-cyan-400 h-2.5 rounded-full" style={{ width: "98.4%" }}></div>
+                    <div className="bg-cyan-400 h-2.5 rounded-full" style={{ width: "79.14%" }}></div>
                   </div>
                 </div>
 
                 <div className="mb-8">
                   <div className="flex justify-between mb-2">
-                    <span className="text-white font-medium">Precision</span>
-                    <span className="text-white font-bold">97.2%</span>
+                    <span className="text-white font-medium">Validation Accuracy</span>
+                    <span className="text-white font-bold">77.68%</span>
                   </div>
                   <div className="w-full bg-gray-700 rounded-full h-2.5">
-                    <div className="bg-cyan-400 h-2.5 rounded-full" style={{ width: "97.2%" }}></div>
+                    <div className="bg-cyan-400 h-2.5 rounded-full" style={{ width: "77.68%" }}></div>
                   </div>
                 </div>
 
                 <div className="mb-8">
                   <div className="flex justify-between mb-2">
-                    <span className="text-white font-medium">Recall</span>
-                    <span className="text-white font-bold">94.8%</span>
+                    <span className="text-white font-medium">ROC-Score</span>
+                    <span className="text-white font-bold">90.0%</span>
                   </div>
                   <div className="w-full bg-gray-700 rounded-full h-2.5">
-                    <div className="bg-cyan-400 h-2.5 rounded-full" style={{ width: "94.8%" }}></div>
+                    <div className="bg-cyan-400 h-2.5 rounded-full" style={{ width: "90.0%" }}></div>
                   </div>
-                </div>
-
-                <div className="mb-8">
-                  <div className="flex justify-between mb-2">
-                    <span className="text-white font-medium">F1 Score</span>
-                    <span className="text-white font-bold">95.9%</span>
-                  </div>
-                  <div className="w-full bg-gray-700 rounded-full h-2.5">
-                    <div className="bg-cyan-400 h-2.5 rounded-full" style={{ width: "95.9%" }}></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-blue-800/50 rounded-lg p-6 mt-8">
-              <h3 className="text-xl font-bold text-white mb-3">Key Achievements</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <ul className="text-white space-y-2">
-                  <li className="flex items-start">
-                    <svg
-                      className="h-5 w-5 text-cyan-400 mr-2 mt-0.5"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                    </svg>
-                    Early detection rate improved by 40%
-                  </li>
-                  <li className="flex items-start">
-                    <svg
-                      className="h-5 w-5 text-cyan-400 mr-2 mt-0.5"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                    </svg>
-                    False positive rate reduced to under 2%
-                  </li>
-                  <li className="flex items-start">
-                    <svg
-                      className="h-5 w-5 text-cyan-400 mr-2 mt-0.5"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                    </svg>
-                    Processing time under 1.5 seconds per sample
-                  </li>
-                  <li className="flex items-start">
-                    <svg
-                      className="h-5 w-5 text-cyan-400 mr-2 mt-0.5"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                    </svg>
-                    Deployed successfully in 20+ healthcare facilities
-                  </li>
-                </ul>
-                <div className="relative h-48 rounded-lg overflow-hidden">
-                  <Image src="/img.jpg" alt="Medical Achievements" fill className="object-cover" />
                 </div>
               </div>
             </div>
